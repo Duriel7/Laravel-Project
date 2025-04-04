@@ -11,10 +11,16 @@
     <div class="p-6">
         <h1 class="text-2xl font-bold mb-4">Liste des articles</h1>
 
+        <div class="mb-4">
+            <a href="<?php echo e(route('posts.create')); ?>" class="inline-block bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">
+                Nouvel Article
+            </a>
+        </div>
+
         <ul class="space-y-4">
             <?php $__empty_1 = true; $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                 <li class="border p-4 rounded">
-                    <h2 class="text-xl font-semibold"><?php echo e($post->title); ?></h2>
+                    <h2 class="text-xl font-semibold" class="hover:underline text-blue-600"><?php echo e($post->title); ?></h2>
                     <p class="text-gray-600"><?php echo e($post->content); ?></p>
                     <p class="text-sm text-gray-400 mt-2">Publié par <?php echo e($post->user->name); ?></p>
                 </li>
