@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
+            $table->date('birthdate');
+            $table->string('name');
+            $table->foreignId('owner_id')->constrained('owners')->cascadeOnDelete();
+            $table->string('species');
             $table->timestamps();
         });
     }
