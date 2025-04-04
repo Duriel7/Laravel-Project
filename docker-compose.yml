@@ -1,0 +1,34 @@
+services:
+    app:
+        user: "${UID}:${GID}"
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: personal-project-app
+        volumes:
+            - ./:/var/www/html
+            - ./bootstrap/cache:/var/www/html/bootstrap/cache
+            - ./storage:/var/www/html/storage
+        ports:
+            - "8010:8000"
+        working_dir: /var/www/html
+        command: php artisan serve --host=0.0.0.0
+        depends_on:
+            - db
+
+    db:
+        image: mysql:8.0
+        container_name: personal-project-db
+        restart: unless-stopped
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_DATABASE: laravel
+            MYSQL_USER: test
+            MYSQL_PASSWORD: 123
+            MYSQL_ROOT_PASSWORD: 123
+        volumes:
+            - personal_project_db_data:/var/lib/mysql
+
+volumes:
+    personal_project_db_data:
