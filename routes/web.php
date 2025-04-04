@@ -16,6 +16,10 @@ Route::get('dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::get('/photos', function() {
+    return view('photos.index');
+})->middleware(['auth'])->name('photos.index');
+
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 

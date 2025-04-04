@@ -14,7 +14,7 @@
     <div class="p-6">
         <h1 class="text-2xl font-bold mb-4">Bienvenue <?php echo e(Auth::user()->name); ?> !</h1>
 
-        <p class="text-gray-700">Voici ton espace personnel. Tu peux maintenant créer des ressources, tester les routes, etc.</p>
+        <p class="text-gray-700">Voici ton espace personnel. Tu peux maintenant créer ce que tu veux.</p>
     </div>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
