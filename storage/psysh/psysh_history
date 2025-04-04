@@ -1,0 +1,7 @@
+App\Models\User::all();
+$user = App\Models\User::find(1);
+$user->posts()->create(['title' => 'Mon premier article', 'content' => 'Contenu généré depuis le shell']);
+$user->posts()->create(['title' => 'Mon premier article', 'content' => 'Contenu généré depuis le shell']);
+$user->posts()->create(['title' => 'Mon premier article', 'content' => 'Contenu généré depuis le shell']);
+$user->posts()->create(['title' => 'Mon premier article', 'content' => 'Contenu généré depuis le shell']);
+quit
