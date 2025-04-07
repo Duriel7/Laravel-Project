@@ -64,7 +64,8 @@ class PatientResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('species'),
+                Tables\Columns\TextColumn::make('species')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('birthdate')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('owner.name')

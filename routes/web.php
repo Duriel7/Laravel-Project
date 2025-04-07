@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Providers\Filament\AdminPanelProvider;
 
 Route::get('/', function () {
     return view('welcome');
