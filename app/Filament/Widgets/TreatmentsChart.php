@@ -19,7 +19,7 @@ class TreatmentsChart extends ChartWidget
                 end: now(),
             )
             ->perMonth()
-            ->count();
+            ->sum('price');
         return [
             'datasets' => [
             [
