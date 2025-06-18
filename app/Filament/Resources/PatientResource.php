@@ -31,6 +31,7 @@ class PatientResource extends Resource
                         'cat'=>'Cat',
                         'dog'=>'Dog',
                         'rabbit'=>'Rabbit',
+                        'parrot'=>'Parrot',
                     ])
                     ->required(),
                 Forms\Components\DatePicker::make('birthdate')
@@ -80,6 +81,7 @@ class PatientResource extends Resource
                         'cat'=>'Cat',
                         'dog'=>'Dog',
                         'rabbit'=>'Rabbit',
+                        'parrot'=>'Parrot',
                     ]),
             ])
             ->actions([
